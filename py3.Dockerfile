@@ -11,5 +11,6 @@ RUN apk add --update --no-cache \
     libffi \
     libffi-dev \
     libxslt-dev \
+    build-base \
   && pip install scrapy \
   && rm -rf /var/cache/apk/*

@@ -1,5 +1,5 @@
-#python2 scrapy
-FROM python:3-alpine
+#python3 scrapy
+FROM python:3.6-alpine
 RUN echo "Asia/Shanghai" > /etc/timezone
 LABEL cn.crotondata.docker.project="spiders"
 #RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.7/main" > /etc/apk/repositories

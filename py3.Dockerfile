@@ -1,11 +1,9 @@
-#python3 scrapy
-FROM alpine:latest
+#python2 scrapy
+FROM python:3-alpine
 RUN echo "Asia/Shanghai" > /etc/timezone
 LABEL cn.crotondata.docker.project="spiders"
 #RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.7/main" > /etc/apk/repositories
-RUN apk add --update \
-    python3 \
-    python3-dev \
+RUN apk add --update --no-cache \ 
     gcc \
     openssl-dev \
     libxml2 \
@@ -13,7 +11,5 @@ RUN apk add --update \
     libffi \
     libffi-dev \
     libxslt-dev \
-    py-pip \
-    build-base \
-  && pip3 install scrapy \
+  && pip install scrapy \
   && rm -rf /var/cache/apk/*
